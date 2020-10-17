@@ -166,7 +166,7 @@ struct ContentView: View {
                     .tabItem { Text("Tab 2") }
                 .tag(Tabs.tab2)
             }
-            .navigationBarTitle(returnNaviBarTitle(tabSelection: self.tabSelection))
+            .navigationBarTitle(returnNaviBarTitle(tabSelection: self.tabSelection))//add the NavigationBarTitle here.
         }
     }
     
@@ -174,7 +174,7 @@ struct ContentView: View {
         case tab1, tab2
     }
     
-    func returnNaviBarTitle(tabSelection: Tabs) -> String{
+    func returnNaviBarTitle(tabSelection: Tabs) -> String{//this function will return the correct NavigationBarTitle when different tab is selected.
         switch tabSelection{
             case .tab1: return "Tab1"
             case .tab2: return "Tab2"
@@ -187,7 +187,7 @@ struct ContentView: View {
 |<img src = "/Pictures/gif3.gif" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/final-tab1.jpg" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/final-navi1.jpg" width = "300" alt = "Navigation in TabView"/>|
 
 ## End
-Here ends the doc, hope you have learned something. Thanks so much for your reading.
+Here ends the doc! Hope you have learned something. Thanks so much for your reading.
 
 
 
