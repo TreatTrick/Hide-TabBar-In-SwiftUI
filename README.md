@@ -64,3 +64,5 @@ struct NavigatedView: View {
 
 
 When running the code:
+![Navigation in TabView](\Picture\gif1.gif)
+
