@@ -81,6 +81,115 @@ Here, it should be clear. If we want to hide the `TabBar`, we just write the `Ta
 |:---:|
 |<img src = "/Pictures/NaviTab.jpg" width = "650" alt = "Navigation in TabView"/>|
 
+After knowing this, we just need to modify our code a little to let `NavigationView` contain `TabView`and we can perfectly solve the problem.
+
+## The Solution
+Like what has been mentioned above, we just rewrite our code to make the `NavigationView` contains the `TabView`.
+
+```swift
+import SwiftUI
+
+struct ContentView: View {
+    @State var tabSelection: Tabs = .tab1
+    var body: some View {
+        NavigationView{
+            TabView(selection: $tabSelection){
+//                NavigationView{ //if you write the NavigationView here, you cannot remove TabBar after navigation
+                    NavigationLink(destination: NavigatedView()){
+                        VStack{
+                            Text("Here is Tab 1")
+                            Text("Tap me to NavigatedView")
+                        }
+                        .navigationBarTitle("Tab1")//NavigationBarTitle does not work here
+                    }
+//                }
+                    .tabItem { Text("Tab 1") }
+                .tag(Tabs.tab1)
+                
+//                NavigationView{//Tab2 also has a NavigationView
+                    NavigationLink(destination: NavigatedView()){
+                        VStack{
+                            Text("Here is Tab 2")
+                            Text("Tap me to NavigatedView")
+                        }
+                        .navigationBarTitle("Tab2")//NavigationBarTitle does not work here
+                    }
+//                }
+                    .tabItem { Text("Tab 2") }
+                .tag(Tabs.tab2)
+            }
+        }
+    }
+    
+    enum Tabs{
+        case tab1, tab2
+    }
+}
+```
+Another problem here is that our `NavigationBarTitle` does not display itself when we write it in `TabView`.
+
+|Navigation in TabView|before navigation|after navigation|
+|---|---|---|
+|<img src = "/Pictures/gif2.gif" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/solve-tab1.jpg" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/solve-navi1.jpg" width = "300" alt = "Navigation in TabView"/>|
+
+The solution is also easy. Just move the `NavigationBarTitle` to the end of `TabView` and it works fine. But in this way, when we tap different tabs, the `NavigationBarTitle` is always the same, which is not what we want. So, I also added a function `returnNaviBarTitle` to display the right `NavigationBarTitle` based on the selected tab. The following code is the final version.
+
+```swift
+import SwiftUI
+
+struct ContentView: View {
+    @State var tabSelection: Tabs = .tab1
+    var body: some View {
+        NavigationView{
+            TabView(selection: $tabSelection){
+//                NavigationView{ //if you write the NavigationView here, you cannot remove TabBar after navigation
+                    NavigationLink(destination: NavigatedView()){
+                        VStack{
+                            Text("Here is Tab 1")
+                            Text("Tap me to NavigatedView")
+                        }
+//                        .navigationBarTitle("Tab1")//NavigationBarTitle does not work here
+                    }
+//                }
+                    .tabItem { Text("Tab 1") }
+                .tag(Tabs.tab1)
+                
+//                NavigationView{//Tab2 also has a NavigationView
+                    NavigationLink(destination: NavigatedView()){
+                        VStack{
+                            Text("Here is Tab 2")
+                            Text("Tap me to NavigatedView")
+                        }
+//                        .navigationBarTitle("Tab2")//NavigationBarTitle does not work here
+                    }
+//                }
+                    .tabItem { Text("Tab 2") }
+                .tag(Tabs.tab2)
+            }
+            .navigationBarTitle(returnNaviBarTitle(tabSelection: self.tabSelection))
+        }
+    }
+    
+    enum Tabs{
+        case tab1, tab2
+    }
+    
+    func returnNaviBarTitle(tabSelection: Tabs) -> String{
+        switch tabSelection{
+            case .tab1: return "Tab1"
+            case .tab2: return "Tab2"
+        }
+    }
+}
+```
+|Navigation in TabView|before navigation|after navigation|
+|---|---|---|
+|<img src = "/Pictures/gif3.gif" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/final-tab1.jpg" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/final-navi1.jpg" width = "300" alt = "Navigation in TabView"/>|
+
+## End
+Here ends the doc, hope you have learned something. Thanks so much for your reading.
+
+
 
 
 
