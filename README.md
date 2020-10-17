@@ -64,5 +64,6 @@ struct NavigatedView: View {
 
 
 When running the code:
+
 ![Navigation in TabView](/Pictures/gif1.gif)
 
