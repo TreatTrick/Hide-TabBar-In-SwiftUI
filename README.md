@@ -69,11 +69,17 @@ When running the code, there is a problem, you can see when I tap the text in `T
 |---|---|---|
 |<img src = "/Pictures/gif1.gif" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/tab1.jpg" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/navi1.jpg" width = "300" alt = "Navigation in TabView"/>|
 
-Why does it run like this? To understand this, let's take a look at `View Hierarchy` in `SwistUI`. When you write the `NavigationView` in `TabView`, the things run in `SwiftUI` like the following pictures.`TabView` contains `NavigationView`, and it makes everything happens in `NavigationView` cannot affect `TabView`, because `NavigationView` is just a subview of `TabView`. So, when navigating to another view, `NavigationView` changes, but as the superview, `TabView` will stay what it is.
+Why does it run like this? To understand this, let's take a look at `View Hierarchy` in `SwistUI`. When you write the `NavigationView` in `TabView`, the things run in `SwiftUI` like the following pictures.`TabView` contains `NavigationView`, and it makes everything happens in `NavigationView` cannot affect `TabView`, because `NavigationView` is just a subview of `TabView`. So, when navigating to another view, `NavigationView` changes, but as the super-view, `TabView` will stay what it is.
 
-|when the *Tap Here to a new view* button is tapped, only the red part, which is `NavigationView` changes to orange part, which is `NavigatedView`, but the blue part, which is the `TabView` stays the same.|
+|when the *`Tap Here to a new view`* button is tapped, only the red part, which is `NavigationView` changes to orange part, which is `NavigatedView`, but the blue part, which is the `TabView` stays the same.|
 |:---:|
 |<img src = "/Pictures/TabNavi.jpg" width = "650" alt = "Navigation in TabView"/>|
+
+Here, it should be clear. If we want to hide the `TabBar`, we just write the `TabView` into `NavigationView`, making the `NavigationView` the super-view and the `TabView` the child-view, which is just opposite to the above `View Hierarchy`.
+
+|when the *`Tap Here to a new view`* button is tapped, the blue part, which is `NavigationView` changes to orange part, which is `NavigatedView`, so the `TabBar` in red part disappear itself.|
+|:---:|
+|<img src = "/Pictures/NaviTab.jpg" width = "650" alt = "Navigation in TabView"/>|
 
 
 
