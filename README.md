@@ -72,11 +72,11 @@ When running the code, there is a problem, you can see when I tap the text in `T
 
 |Navigation in TabView|before navigation|after navigation|
 |----|----|----|
-|img1|img2|img3｜
+|img1|img2|img3|
 
 |Navigation in TabView|before navigation|after navigation|
-|---|---|---｜
-|<img src = "/Pictures/gif1.gif" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/tab1.jpg" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/navi1.jpg" width = "300" alt = "Navigation in TabView"/>｜
+|---|---|---|
+|<img src = "/Pictures/gif1.gif" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/tab1.jpg" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/navi1.jpg" width = "300" alt = "Navigation in TabView"/>|
 
 
 
