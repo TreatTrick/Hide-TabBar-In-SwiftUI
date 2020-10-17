@@ -65,16 +65,9 @@ struct NavigatedView: View {
 
 When running the code, there is a problem, you can see when I tap the text in `Tab1` and go to the `NavigatedView`, `TabBar` is still at the bottom. However, when we develop an app, sometimes we really want the `TabBar` disappear when navigating.
 
-|#|语法|效果|
-|---|----|-----|
-|1|`[我的博客](http://blog.csdn.net/guodongxiaren "悬停显示")`|[我的博客](http://blog.csdn.net/guodongxiaren "悬停显示")|
-|2|`[我的知乎][zhihu] `|[我的知乎][zhihu] |
-
 |Navigation in TabView|before navigation|after navigation|
 |---|---|---｜
-|<img src = "/Pictures/gif1.gif" width = "300" alt = "Navigation in TabView"/>
-|<img src = "/Pictures/tab1.jpg" width = "300" alt = "Navigation in TabView"/>
-|<img src = "/Pictures/navi1.jpg" width = "300" alt = "Navigation in TabView"/>｜
+|<img src = "/Pictures/gif1.gif" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/tab1.jpg" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/navi1.jpg" width = "300" alt = "Navigation in TabView"/>｜
 
 
 
