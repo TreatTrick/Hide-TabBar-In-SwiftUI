@@ -65,18 +65,16 @@ struct NavigatedView: View {
 
 When running the code, there is a problem, you can see when I tap the text in `Tab1` and go to the `NavigatedView`, `TabBar` is still at the bottom. However, when we develop an app, sometimes we really want the `TabBar` disappear when navigating.
 
-|#|语法|效果|
-|---|----|-----|
-|1|img1|url1|
-|2|img2|url2|
-
-|Navigation in TabView|before navigation|after navigation|
-|----|----|----|
-|img1|img2|img3|
-
 |Navigation in TabView|before navigation|after navigation|
 |---|---|---|
 |<img src = "/Pictures/gif1.gif" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/tab1.jpg" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/navi1.jpg" width = "300" alt = "Navigation in TabView"/>|
+
+Why does it run like this? To understand this, let's take a look at `View Hierarchy` in `SwistUI`. When you write the `NavigationView` in `TabView`, the things run in `SwiftUI` like the following pictures.`TabView` contains `NavigationView`, and it makes everything happens in `NavigationView` cannot affect `TabView`, because `NavigationView` is just a subview of `TabView`. So, when navigating to another view, `NavigationView` changes, but as the superview, `TabView` will stay what it is.
+
+|when the *Tap Here to a new view* button is tapped, only the red part, which is `NavigationView` changes to orange part, which is `NavigatedView`, but the blue part, which is the `TabView` stays the same.|
+|---|
+|<img src = "/Pictures/TabNavi.jpg" width = "600" alt = "Navigation in TabView"/>|
+
 
 
 
