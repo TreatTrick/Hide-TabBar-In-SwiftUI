@@ -13,6 +13,7 @@
 		973FA6B7253AA2EC0003F34E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 973FA6B6253AA2EC0003F34E /* Preview Assets.xcassets */; };
 		973FA6C2253AA2EC0003F34E /* HideTabBarInNavigationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FA6C1253AA2EC0003F34E /* HideTabBarInNavigationViewTests.swift */; };
 		973FA6CD253AA2EC0003F34E /* HideTabBarInNavigationViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FA6CC253AA2EC0003F34E /* HideTabBarInNavigationViewUITests.swift */; };
+		973FA6DE253AA38C0003F34E /* NavigatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FA6DD253AA38C0003F34E /* NavigatedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		973FA6C8253AA2EC0003F34E /* HideTabBarInNavigationViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HideTabBarInNavigationViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		973FA6CC253AA2EC0003F34E /* HideTabBarInNavigationViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideTabBarInNavigationViewUITests.swift; sourceTree = "<group>"; };
 		973FA6CE253AA2EC0003F34E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		973FA6DD253AA38C0003F34E /* NavigatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				973FA6AF253AA2E80003F34E /* HideTabBarInNavigationViewApp.swift */,
 				973FA6B1253AA2E80003F34E /* ContentView.swift */,
+				973FA6DD253AA38C0003F34E /* NavigatedView.swift */,
 				973FA6B3253AA2EC0003F34E /* Assets.xcassets */,
 				973FA6B8253AA2EC0003F34E /* Info.plist */,
 				973FA6B5253AA2EC0003F34E /* Preview Content */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				973FA6DE253AA38C0003F34E /* NavigatedView.swift in Sources */,
 				973FA6B2253AA2E80003F34E /* ContentView.swift in Sources */,
 				973FA6B0253AA2E80003F34E /* HideTabBarInNavigationViewApp.swift in Sources */,
 			);

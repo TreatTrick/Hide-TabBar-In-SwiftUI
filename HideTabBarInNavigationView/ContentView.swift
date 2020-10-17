@@ -8,9 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var tabSelection: Tabs = .tab1
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView(selection: $tabSelection){
+            NavigationView{ //if you write the NavigationView here, you cannot remove TabBar after navigation
+                NavigationLink(destination: NavigatedView()){
+                    VStack{
+                        Text("Here is Tab 1")
+                        Text("Tap me to NavigatedView")
+                    }
+                    .navigationBarTitle("Tab1")
+                }
+            }
+            .tabItem { Text("Tab 1") }
+            .tag(Tabs.tab1)
+            
+            NavigationView{
+                NavigationLink(destination: NavigatedView()){
+                    VStack{
+                        Text("Here is Tab 2")
+                        Text("Tap me to NavigatedView")
+                    }
+                    .navigationBarTitle("Tab2")
+                }
+            }
+            .tabItem { Text("Tab 2") }
+            .tag(Tabs.tab2)
+        }
+    }
+    
+    enum Tabs{
+        case tab1, tab2
     }
 }
 
