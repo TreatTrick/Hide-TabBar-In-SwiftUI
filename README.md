@@ -6,7 +6,7 @@ Lots of developers find they cannot hide `TabBar` when they use `NavigationView`
 Here, I would like to give you guys a solution to solve this problem. I will explain some `View Hierarchy` knowledge first to help you guys understand what's actually going on in `swiftUI` when we try to use `NavigationView` and `TabView`. You can also directly jump to [solution](#the-solution) if you want to. 
 
 ## The Hierarchy of SwiftUI Views
-Here is a demo app. In this demo, I have two tabs, *tab1* and *tab2*, in a `TabView`, and I want to tap the text in each *tab* to navigate to `NavigatedView`. So, I add `NavigationView` and `NavigationLink` to the contents in each *tab*. The code is as the below.
+Here is a demo app. In this demo, I have two tabs, *tab1* and *tab2*, in a `TabView`, and I want to tap the text in each *tab* to navigate to `NavigatedView`. So, I add `NavigationView` and `NavigationLink` to the contents in each *tab*. The code is as below.
 
 ### ContentView.swift
 
@@ -63,28 +63,28 @@ struct NavigatedView: View {
 ```
 
 
-When running the code, there is a problem, you can see when I tap the text in `Tab1` and go to the `NavigatedView`, `TabBar` is still at the bottom. However, when we develop an app, sometimes we really want the `TabBar` disappear when navigating.
+When running the code, there is a problem, you can see when I tap the text in `Tab1` and go to the `NavigatedView`, `TabBar` is still at the bottom. However, when we develop an app, sometimes we really want the `TabBar` to disappear when navigating.
 
 |Navigation in TabView|before navigation|after navigation|
 |---|---|---|
 |<img src = "/Pictures/gif1.gif" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/tab1.jpg" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/navi1.jpg" width = "300" alt = "Navigation in TabView"/>|
 
-Why does it run like this? To understand this, let's take a look at `View Hierarchy` in `SwistUI`. When you write the `NavigationView` in `TabView`, the things run in `SwiftUI` like the following pictures.`TabView` contains `NavigationView`, and it makes everything happens in `NavigationView` cannot affect `TabView`, because `NavigationView` is just a subview of `TabView`. So, when navigating to another view, `NavigationView` changes, but as the super-view, `TabView` will stay what it is.
+Why does it run like this? To understand this, let's take a look at `View Hierarchy` in `SwistUI`. When you write the `NavigationView` in `TabView`, the things goes in `SwiftUI` like the following pictures.`TabView` contains `NavigationView`, and it makes everything happening in `NavigationView` cannot affect `TabView`, because `NavigationView` is just a child-view of `TabView`. So, when navigating to another view, `NavigationView` changes, but as the super-view `TabView` will stay what it is.
 
-|when the *`Tap Here to a new view`* button is tapped, only the red part, which is `NavigationView` changes to orange part, which is `NavigatedView`, but the blue part, which is the `TabView` stays the same.|
+|when the *`Tap Here to a new view`* button is tapped, only the red part (`NavigationView`) changes to orange part (`NavigatedView`), but the blue part ( `TabView`) stays the same.|
 |:---:|
 |<img src = "/Pictures/TabNavi.jpg" width = "650" alt = "Navigation in TabView"/>|
 
-Here, it should be clear. If we want to hide the `TabBar`, we just write the `TabView` into `NavigationView`, making the `NavigationView` the super-view and the `TabView` the child-view, which is just opposite to the above `View Hierarchy`.
+Here, it should be clear. If we want to hide the `TabBar`, we just write `TabView` into `NavigationView`, making the `NavigationView` the super-view and the `TabView` the child-view, which is just opposite to the above `View Hierarchy`.
 
-|when the *`Tap Here to a new view`* button is tapped, the blue part, which is `NavigationView` changes to orange part, which is `NavigatedView`, so the `TabBar` in red part disappear itself.|
+|when the *`Tap Here to a new view`* button is tapped, the blue part (`NavigationView`) changes to orange part (`NavigatedView`), so the `TabBar` in red part disappears itself.|
 |:---:|
 |<img src = "/Pictures/NaviTab.jpg" width = "650" alt = "Navigation in TabView"/>|
 
-After knowing this, we just need to modify our code a little to let `NavigationView` contain `TabView`and we can perfectly solve the problem.
+After knowing this, we just need to modify our code a little to let `NavigationView` contain `TabView`and then we can perfectly solve the problem.
 
 ## The Solution
-Like what has been mentioned above, we just rewrite our code to make the `NavigationView` contains the `TabView`.
+Like what has been mentioned above, we just rewrite our code to make `NavigationView` contain `TabView`.
 
 ```swift
 import SwiftUI
@@ -126,7 +126,7 @@ struct ContentView: View {
     }
 }
 ```
-Another problem here is that our `NavigationBarTitle` does not display itself when we write it in `TabView`.
+Another problem here is our `NavigationBarTitle` does not display itself when we write it in `TabView`.
 
 |Navigation in TabView|before navigation|after navigation|
 |---|---|---|
