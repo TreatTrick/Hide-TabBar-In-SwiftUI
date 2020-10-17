@@ -65,6 +65,10 @@ struct NavigatedView: View {
 
 When running the code:
 
-
 <img src = "/Pictures/gif1.gif" width = "300" alt = "Navigation in TabView"/>
+
+Here is the problem, you can see when I tap the text in `Tab1` and go to the `NavigatedView`, `TabBar` is still at the bottom. However, when we develop an app, sometimes we really want the `TabBar` disappear when navigating.
+
+<img src = "/Pictures/tab1.jpeg" width = "300" alt = "Navigation in TabView"/>
+<img src = "/Pictures/navi1.jpeg" width = "300" alt = "Navigation in TabView"/>
 
