@@ -9,7 +9,7 @@ Here, I would like to give you guys a solution to solve this problem. I will exp
 Here is a demo app. In this demo, I have two tabs, *tab1* and *tab2* in a `TabView`, and I want to tap the text in each *tab* to navigate to `NavigatedView`. So, I add `NavigationView` and `NavigationLink` to the contents in each *tab*. The code is as the below.
 
 ### ContentView.swift
----
+
 ```swift
 import SwiftUI
 
@@ -49,7 +49,7 @@ struct ContentView: View {
 }
 ```
 ### NavigatedView.swift
----
+
 
 ```swift
 import SwiftUI
@@ -61,6 +61,6 @@ struct NavigatedView: View {
     }
 }
 ```
----
+
 
 When running the code:
