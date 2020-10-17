@@ -1,4 +1,4 @@
-# HideTabBarInNavigationView
+# How to Hide TabBar in NavigationView When Using SwiftUI
 Recently, more and more people are using `SwiftUI` to develop iOS apps, but as a new tool `SwiftUI` still has a lot of unresolved problems.  
 
 Lots of developers found that they cannot hide `TabBar` when they use `NavigationView` to navigate to a new view in `SwiftUI`. It is pretty annoying.  
