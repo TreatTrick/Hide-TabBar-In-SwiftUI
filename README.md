@@ -7,6 +7,8 @@ Here, I would like to give you guys a solution to solve this problem. I will exp
 
 ## The Hierarchy of SwiftUI Views
 Here is a demo app. In this demo, I have two tabs, *tab1* and *tab2* in a `TabView`, and I want to tap the text in each *tab* to navigate to `NavigatedView`. So, I add `NavigationView` and `NavigationLink` to the contents in each *tab*. The code is as the below.
+
+###ContentView.swift
 ---
 ```swift
 import SwiftUI
@@ -27,7 +29,7 @@ struct ContentView: View {
             .tabItem { Text("Tab 1") }
             .tag(Tabs.tab1)
             
-            NavigationView{
+            NavigationView{//Tab2 also has a NavigationView
                 NavigationLink(destination: NavigatedView()){
                     VStack{
                         Text("Here is Tab 2")
@@ -45,10 +47,17 @@ struct ContentView: View {
         case tab1, tab2
     }
 }
+```
+###NavigatedView.swift
+---
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+```swift
+import SwiftUI
+
+struct NavigatedView: View {
+    var body: some View {
+        Text("Hi! This is the NavigatedView")
+            .navigationBarTitle("NavigatedView")
     }
 }
 ```
