@@ -67,16 +67,18 @@ When running the code, there is a problem, you can see when I tap the text in `T
 
 |#|语法|效果|
 |---|----|-----|
-|1|`[我的博客](http://blog.csdn.net/guodongxiaren "悬停显示")`|[我的博客](http://blog.csdn.net/guodongxiaren "悬停显示")|
-|2|`[我的知乎][zhihu] `|[我的知乎][zhihu] |
+|1|img1|url1|
+|2|img2|url2|
+
+|Navigation in TabView|before navigation|after navigation|
+|----|----|----|
+|img1|img2|img3｜
 
 |Navigation in TabView|before navigation|after navigation|
 |---|---|---｜
 |<img src = "/Pictures/gif1.gif" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/tab1.jpg" width = "300" alt = "Navigation in TabView"/>|<img src = "/Pictures/navi1.jpg" width = "300" alt = "Navigation in TabView"/>｜
 
-|Navigation in TabView|before navigation|after navigation|
-|---|---|---｜
-|img1|img2|img3｜
+
 
 
 
