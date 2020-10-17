@@ -3,7 +3,7 @@ Recently, more and more people are using `SwiftUI` to develop iOS apps, but as a
 
 Lots of developers find they cannot hide `TabBar` when they use `NavigationView` to navigate to a new view in `SwiftUI`. It is pretty annoying.  
 
-Here, I would like to give you guys a solution to solve this problem. I will explain some `View Hierarchy` knowledge first to help you guys understand what's actually going on in `swiftUI` when we try to use `NavigationView` and `TabView`. You can also directly jump the [solution](#the-solution) if you want to. 
+Here, I would like to give you guys a solution to solve this problem. I will explain some `View Hierarchy` knowledge first to help you guys understand what's actually going on in `swiftUI` when we try to use `NavigationView` and `TabView`. You can also directly jump to [solution](#the-solution) if you want to. 
 
 ## The Hierarchy of SwiftUI Views
 Here is a demo app. In this demo, I have two tabs, *tab1* and *tab2* in a `TabView`, and I want to tap the text in each *tab* to navigate to `NavigatedView`. So, I add `NavigationView` and `NavigationLink` to the contents in each *tab*. The code is as the below.
