@@ -72,8 +72,8 @@ When running the code, there is a problem, you can see when I tap the text in `T
 Why does it run like this? To understand this, let's take a look at `View Hierarchy` in `SwistUI`. When you write the `NavigationView` in `TabView`, the things run in `SwiftUI` like the following pictures.`TabView` contains `NavigationView`, and it makes everything happens in `NavigationView` cannot affect `TabView`, because `NavigationView` is just a subview of `TabView`. So, when navigating to another view, `NavigationView` changes, but as the superview, `TabView` will stay what it is.
 
 |when the *Tap Here to a new view* button is tapped, only the red part, which is `NavigationView` changes to orange part, which is `NavigatedView`, but the blue part, which is the `TabView` stays the same.|
-|---|
-|<img src = "/Pictures/TabNavi.jpg" width = "600" alt = "Navigation in TabView"/>|
+|:---:|
+|<img src = "/Pictures/TabNavi.jpg" width = "650" alt = "Navigation in TabView"/>|
 
 
 
