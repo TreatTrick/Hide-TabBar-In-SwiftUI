@@ -66,5 +66,5 @@ struct NavigatedView: View {
 When running the code:
 
 
-<img src = "/Pictures/gif1.gif" width = "200", alt = "Navigation in TabView"/>
+<img src = "/Pictures/gif1.gif" width = "200" alt = "Navigation in TabView"/>
 
